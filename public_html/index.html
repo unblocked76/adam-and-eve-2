@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+    <title>Adam and Eve 2</title>
+
+    <link rel="stylesheet" href="css/app.css" />
+
+</head>
+
+<body>
+    <canvas id="canvas" width="720" height="720" style="background-color:#FFFFFF"></canvas>
+
+    <script type="text/javascript">
+        var enableAnalytics;
+
+
+
+        var gameName = "adam-and-eve-2.min.js",
+            enableAnalytics, phaserAdProvider;
+
+
+
+
+
+
+        //This all here is for cache busting;
+        function addScript(src, buster, callback) {
+            var s = document.createElement('script');
+            s.setAttribute('src', src + '?v=' + buster);
+            if (typeof callback === 'function') {
+                s.onload = callback;
+            }
+            document.body.appendChild(s);
+        }
+
+
+
+        addScript('version.js', Date.now(), function() {
+
+            addScript(gameName, version, function() {
+                init()
+            });
+
+        });
+    </script>
+</body>
+
+</html>
